@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<key id="5bc1e1bf-db4d-44e4-8eab-4c775d81d905" version="1">
+  <creationDate>2025-04-15T13:31:18.3519259Z</creationDate>
+  <activationDate>2025-04-15T13:31:18.3519259Z</activationDate>
+  <expirationDate>2025-07-14T13:31:18.3519259Z</expirationDate>
+  <descriptor deserializerType="Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
+    <descriptor>
+      <encryption algorithm="AES_256_CBC" />
+      <validation algorithm="HMACSHA256" />
+      <masterKey p4:requiresEncryption="true" xmlns:p4="http://schemas.asp.net/2015/03/dataProtection">
+        <!-- Warning: the key below is in an unencrypted form. -->
+        <value>CJFZMWZAW4cx3nqH7DI6UkLJZ0VPV1WLKavPtP1SMJG5N3N9vvFny+PDjYrDZcS/5GQq2kC98LhWZs7umqsmLA==</value>
+      </masterKey>
+    </descriptor>
+  </descriptor>
+</key>
