@@ -9,13 +9,16 @@
     NopHtml.AppendPageCssClassParts("html-registration-page");
 }
 
+
 <div class="page registration-page">
     <div class="page-title">
         <h1>@T("Account.Register")</h1>
     </div>
     <div class="page-body">
+        
         @await Component.InvokeAsync(typeof(WidgetViewComponent), new { widgetZone = PublicWidgetZones.RegisterTop, additionalData = Model })
         <form asp-route="Register" asp-route-returnurl="@Context.Request.Query["ReturnUrl"]" method="post" autocomplete="off">
+            
             <div asp-validation-summary="ModelOnly" class="message-error"></div>
             <div class="fieldset">
                 <div class="title">
@@ -59,6 +62,8 @@
                     }
                     @if (Model.LastNameEnabled)
                     {
+                        
+
                         <div class="inputs">
                             <label asp-for="LastName" asp-postfix=":"></label>
                             <input asp-for="LastName" />
@@ -293,6 +298,7 @@
                     </div>
                 </div>
             }
+            
             @if (Model.NewsletterEnabled || Model.CustomerAttributes.Count > 0)
             {
                 <div class="fieldset">
@@ -306,6 +312,11 @@
                                 <label asp-for="Newsletter" asp-postfix=":"></label>
                                 <input asp-for="Newsletter" />
                                 <span asp-validation-for="Newsletter"></span>
+                            </div>
+                            <div class="inputs">
+                                <label asp-for="IsSeller" asp-postfix=":"></label>
+                                <input asp-for="IsSeller" />
+                                <span asp-validation-for="IsSeller"></span>
                             </div>
                         }
                         @if (Model.CustomerAttributes.Count > 0)
@@ -383,6 +394,7 @@
                             </script>
                             <div class="inputs accept-consent">
                                 <input id="accept-consent" type="checkbox" name="accept-consent" />
+                                
                                 <label for="accept-consent">@T("Account.Fields.AcceptPrivacyPolicy")</label>
                                 @if (Model.AcceptPrivacyPolicyPopup)
                                 {

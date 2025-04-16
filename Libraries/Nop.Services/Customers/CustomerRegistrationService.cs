@@ -302,8 +302,12 @@ public partial class CustomerRegistrationService : ICustomerRegistrationService
 
         //add to 'Registered' role
         var registeredRole = await _customerService.GetCustomerRoleBySystemNameAsync(NopCustomerDefaults.RegisteredRoleName) ?? throw new NopException("'Registered' role could not be loaded");
-
+        
         await _customerService.AddCustomerRoleMappingAsync(new CustomerCustomerRoleMapping { CustomerId = request.Customer.Id, CustomerRoleId = registeredRole.Id });
+
+        //add to 'Vendors' role
+        var vendorsRole = await _customerService.GetCustomerRoleBySystemNameAsync(NopCustomerDefaults.VendorsRoleName) ?? throw new NopException("'Vendors' role could not be loaded");
+        await _customerService.AddCustomerRoleMappingAsync(new CustomerCustomerRoleMapping { CustomerId = request.Customer.Id, CustomerRoleId = vendorsRole.Id });
 
         //remove from 'Guests' role            
         if (await _customerService.IsGuestAsync(request.Customer))

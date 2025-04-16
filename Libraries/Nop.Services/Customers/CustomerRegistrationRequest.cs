@@ -21,7 +21,8 @@ public partial class CustomerRegistrationRequest
         string password,
         PasswordFormat passwordFormat,
         int storeId,
-        bool isApproved = true)
+        bool isApproved = true,
+        bool isSeller = false)
     {
         Customer = customer;
         Email = email;
@@ -30,6 +31,7 @@ public partial class CustomerRegistrationRequest
         PasswordFormat = passwordFormat;
         StoreId = storeId;
         IsApproved = isApproved;
+        IsSeller = isSeller;
     }
 
     /// <summary>
@@ -66,4 +68,9 @@ public partial class CustomerRegistrationRequest
     /// Is approved
     /// </summary>
     public bool IsApproved { get; set; }
+
+    /// <summary>
+    /// Is seller
+    /// </summary>
+    public bool IsSeller { get; set; }
 }

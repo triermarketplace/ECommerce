@@ -144,6 +144,7 @@ public partial record RegisterModel : BaseNopModel
     public string VatNumber { get; set; }
     public bool DisplayVatNumber { get; set; }
     public bool VatNumberRequired { get; set; }
+    public bool IsSeller { get; set; } // checkbox için satici tribi
 
     public bool HoneypotEnabled { get; set; }
     public bool DisplayCaptcha { get; set; }
